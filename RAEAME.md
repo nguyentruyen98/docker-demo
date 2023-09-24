@@ -7,6 +7,7 @@ docker run docker/whalesay cowsay boo
 
 ```
 -d : Run container in the background
+tag: Version image, default is `latest`
 ```
 
 2. List all the running container
@@ -53,4 +54,16 @@ docker exec <container id> <command>
 
 ```
 docker image
+```
+
+9. Inspect docker container
+
+```
+docker inspect <container name or container id >s
+```
+
+10. View container log
+
+```
+docker log <container name or container id>
 ```
