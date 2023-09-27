@@ -15,6 +15,7 @@ tag: Version image, default is `latest`
 ```
 docker ps
 ```
+
 ```
 -a : List all container
 ```
@@ -31,7 +32,7 @@ docker stop <container name or container id>
 docker rm <container name or container id>
 ```
 
-5. Remove docker image 
+5. Remove docker image
 
 ```
 docker rmi <docker image name or image id>
@@ -44,7 +45,6 @@ docker pull <image name>
 ```
 
 7. Exec docker container
-   
 
 ```
 docker exec <container id> <command>
@@ -66,4 +66,48 @@ docker inspect <container name or container id >s
 
 ```
 docker log <container name or container id>
+```
+
+11. CMD vs ENTRYPOINT
+
+```
+FROM ubuntu
+CMD ["sleep", "10"]
+
+docker run ubuntu [CMD]
+
+change CMD 
+
+docker run ubuntu sleep 20
+```
+
+```
+FROM ubuntu
+ENTRYPOINT ["sleep"]
+
+docker run ubuntu [ENTRYPOINT] 10
+(docker run ubuntu sleep 10)
+```
+
+```
+default value ENTRYPOINT
+
+FROM ubuntu
+ENTRYPOINT ["sleep"]
+CMD ["10"]
+
+docker run ubuntu [ENTRYPOINT] [CMD]
+(docker run ubuntu sleep 10)
+
+```
+
+```
+modified ENTRYPOINT
+
+FROM ubuntu
+ENTRYPOINT ["sleep"]
+CMD ["10"]
+
+docker run --entrypoint sleep2.0 ubuntu 10
+
 ```
