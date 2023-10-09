@@ -116,5 +116,5 @@ docker run --entrypoint sleep2.0 ubuntu 10
 when build image, docker created Image Layer (Read only)
 ```
 ```
-when run docker container, docker created Container Layer (Read and write). When docker modify data (create, edit, delete file), docker will create copy of changed layer and store it in Container layer
+when run docker container, docker created Container Layer (Read and write). When docker modify data (create, edit, delete file), docker will create copy of changed layer and store it in Container layer. Because same image layer may be shared between multiple container created from this image.
 ```
